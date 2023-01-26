@@ -1,0 +1,29 @@
+name: Build and Push Docker Images
+on: 
+ push:
+ schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '11 11 1 * *'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1 
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: freekers/docker-inviska:latest,freekers/docker-inviska:${{ github.run_number }}
