@@ -8,7 +8,7 @@ installation or configuration needed on the client side) or via any VNC client.
 
 ---
 
-[![Inviska logo](https://raw.githubusercontent.com/Freekers/docker-inviska/main/logo.png&w=200)](https://www.videohelp.com/software/Inviska-MKV-Extract)[![Inviska](https://images.placeholders.dev/?width=320&height=110&fontFamily=Georgia,sans-serif&fontWeight=400&fontSize=52&text=Inviska&bgColor=rgba(0,0,0,0.0)&textColor=rgba(121,121,121,1))](https://www.videohelp.com/software/Inviska-MKV-Extract)
+![Inviska logo](https://raw.githubusercontent.com/Freekers/docker-inviska/main/logo.png)
 
 Inviska MKV Extract allows you to extract elements from MKV files, such as video, audio and subtitle tracks, attachments (fonts, images, etc), chapters, cuesheets, tags, cues and timecodes. Batch extract mode to easily extract the same element from multiple files. Displays track name and language for easy track identification.
 
