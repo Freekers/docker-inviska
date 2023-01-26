@@ -9,7 +9,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Download Inviska
-RUN wget https://raw.githubusercontent.com/Freekers/docker-inviska/main/Inviska_MKV_Extract-11.0-x86_64.AppImage -P /opt/ && \
+RUN wget --no-check-certificate https://raw.githubusercontent.com/Freekers/docker-inviska/main/Inviska_MKV_Extract-11.0-x86_64.AppImage -P /opt/ && \
     chmod +x /opt/Inviska_MKV_Extract-11.0-x86_64.AppImage
 
 # Copy the start script.
