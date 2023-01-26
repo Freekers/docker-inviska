@@ -1,5 +1,5 @@
 # Docker container for Inviska MKV Extract
-[![Docker Image Size](https://img.shields.io/docker/image-size/freekers/docker-inviska/latest)](https://hub.docker.com/r/freekers/docker-inviska/tags) [![Build Status](https://github.com/Freekers/docker-inviska/actions/workflows/build-image.yml/badge.svg?branch=master)](https://github.com/Freekers/docker-inviska/actions/workflows/build-image.yml)
+[![Docker Image Size](https://img.shields.io/docker/image-size/freekers/docker-inviska/latest)](https://hub.docker.com/r/freekers/docker-inviska/tags) [![Build Status](https://github.com/Freekers/docker-inviska/actions/workflows/build-image.yml/badge.svg?branch=main)](https://github.com/Freekers/docker-inviska/actions/workflows/build-image.yml)
 
 This is a Docker container for [Inviska MKV Extract](https://www.videohelp.com/software/Inviska-MKV-Extract).
 
