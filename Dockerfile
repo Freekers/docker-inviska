@@ -1,15 +1,22 @@
 # Pull base image.
 FROM jlesage/baseimage-gui:ubuntu-20.04-v4
 
-# Install MKVToolnix
+# Install Dependencies
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt-get -y install --no-install-recommends mkvtoolnix wget libglu1 libgtk2.0-0 && \
+    apt-get -y install --no-install-recommends apt-transport-https ca-certificates wget libglu1 libgtk2.0-0
+
+# Install latest MKVToolnix
+# https://mkvtoolnix.download/downloads.html#ubuntu
+RUN wget -O /usr/share/keyrings/gpg-pub-moritzbunkus.gpg https://mkvtoolnix.download/gpg-pub-moritzbunkus.gpg && \
+    sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gpg-pub-moritzbunkus.gpg] https://mkvtoolnix.download/ubuntu/ $(. /etc/os-release && echo $VERSION_CODENAME) main" >> /etc/apt/sources.list.d/mkvtoolnix.list' && \
+    apt-get update && \
+    apt-get install -y mkvtoolnix && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Download Inviska
-RUN wget --no-check-certificate https://raw.githubusercontent.com/Freekers/docker-inviska/main/Inviska_MKV_Extract-11.0-x86_64.AppImage -P /opt/ && \
+RUN wget https://raw.githubusercontent.com/Freekers/docker-inviska/main/Inviska_MKV_Extract-11.0-x86_64.AppImage -P /opt/ && \
     chmod +x /opt/Inviska_MKV_Extract-11.0-x86_64.AppImage
 
 # Copy the start script.
