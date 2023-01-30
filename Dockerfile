@@ -11,7 +11,7 @@ RUN apt-get update && \
 RUN wget -O /usr/share/keyrings/gpg-pub-moritzbunkus.gpg https://mkvtoolnix.download/gpg-pub-moritzbunkus.gpg && \
     sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gpg-pub-moritzbunkus.gpg] https://mkvtoolnix.download/ubuntu/ $(. /etc/os-release && echo $VERSION_CODENAME) main" >> /etc/apt/sources.list.d/mkvtoolnix.list' && \
     apt-get update && \
-    apt-get install -y mkvtoolnix && \
+    apt-get -y install --no-install-recommends mkvtoolnix && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
