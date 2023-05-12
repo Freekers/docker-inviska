@@ -6,8 +6,8 @@ RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get -y install --no-install-recommends apt-transport-https ca-certificates wget libglu1 libgtk2.0-0
 
-# Install latest MKVToolnix
-# https://mkvtoolnix.download/downloads.html#ubuntu
+# Install MKVToolnix 73 - https://mkvtoolnix.download/downloads.html#ubuntu
+# MKVToolnix 73 is the last version that is compatible with Inviska. MKVToolnix 74 or newer is NOT compatible!
 RUN wget -O /usr/share/keyrings/gpg-pub-moritzbunkus.gpg https://mkvtoolnix.download/gpg-pub-moritzbunkus.gpg && \
     sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gpg-pub-moritzbunkus.gpg] https://mkvtoolnix.download/ubuntu/ $(. /etc/os-release && echo $VERSION_CODENAME) main" >> /etc/apt/sources.list.d/mkvtoolnix.list' && \
     apt-get update && \
