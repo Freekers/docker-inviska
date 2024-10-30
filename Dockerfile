@@ -23,8 +23,8 @@ RUN set -eux \
     # Update again with new repository and install remaining packages
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        libglu1 \
         libgtk2.0-0 \
+        libgl1 \
         mkvtoolnix=${MKVTOOLNIX_VERSION} \
     # Download Inviska
     && wget -q https://raw.githubusercontent.com/Freekers/docker-inviska/main/Inviska_MKV_Extract-${INVISKA_VERSION}-x86_64.AppImage -P /opt/ \
